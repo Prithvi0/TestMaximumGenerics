@@ -1,5 +1,9 @@
 public class FindMaximum {
-    public static void main(String[] args) {
-        System.out.println("Welcome to Test Maximum of 3 Variables using Java Generics");
+    public Integer findMaximumInteger(Integer[] maximumInteger) {
+        Integer maximum = maximumInteger[0];
+        for (int max = 0; max < maximumInteger.length; max++)
+            if (maximum.compareTo(maximum) > 0)
+                maximum = max;
+            return maximum;     //  FIND THE MAXIMUM INTEGER FROM GIVEN INTEGERS
     }
 }
