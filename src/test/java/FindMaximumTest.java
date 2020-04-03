@@ -10,7 +10,7 @@ public class FindMaximumTest {
         Assert.assertEquals(33, (int) findMaxInteger);
     }
     @Test
-    public void givenMaximumAtAnotherPosition_ShouldReturnException() {
+    public void givenMaximumAtAnotherPosition_ShouldNotBeEqualAndPassTestCase() {
         FindMaximum maximum = new FindMaximum();
         Integer findMaxInteger = maximum.findMaximumInteger(new Integer[]{3, 33, 4});
         Assert.assertNotEquals(33, (int) findMaxInteger);
