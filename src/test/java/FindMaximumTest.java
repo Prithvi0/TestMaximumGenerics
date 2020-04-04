@@ -39,4 +39,22 @@ public class FindMaximumTest {
         Float findMaxFloatNumber = maximum.findMaximumFloat(new Float[]{1.1f, 2.1f, 3.1f});
         Assert.assertEquals((Float) 3.1f, findMaxFloatNumber);
     }
+    //  T.C 3.1 TEST CASE TO ENSURE MAX STRING IS IN THE FIRST POSITION
+    @Test
+    public void givenMaximumString_WhenAtFirstPosition_ShouldReturnSameString() {
+        String findMaxString = maximum.findMaximumString(new String[]{"Peach", "Apple", "Banana"});
+        Assert.assertEquals("Peach", findMaxString);
+    }
+    //  T.C 3.2 TEST CASE TO ENSURE MAX STRING IS IN THE SECOND POSITION
+    @Test
+    public void givenMaximumString_WhenAtSecondPosition_ShouldReturnSameString() {
+        String findMaxString = maximum.findMaximumString(new String[]{"Apple", "Peach", "Banana"});
+        Assert.assertEquals("Peach", findMaxString);
+    }
+    //  T.C 3.3 TEST CASE TO ENSURE MAX STRING IS IN THE THIRD POSITION
+    @Test
+    public void givenMaximumString_WhenAtThirdPosition_ShouldReturnSameString() {
+        String findMaxString = maximum.findMaximumString(new String[]{"Apple", "Banana", "Peach"});
+        Assert.assertEquals("Peach", findMaxString);
+    }
 }

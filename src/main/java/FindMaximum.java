@@ -21,4 +21,15 @@ public class FindMaximum {
         }
         return maximumFloat;
     }
+    //  METHOD TO FIND THE MAXIMUM STRING
+    public String findMaximumString(String[] strings) {
+        String maximumString = strings[0];
+        if (maximumString.compareTo(strings[1]) < 0) {
+            maximumString = strings[1];
+        }
+        if (maximumString.compareTo(strings[2]) < 0) {
+            maximumString = strings[2];
+        }
+        return maximumString;
+    }
 }
