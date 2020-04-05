@@ -38,7 +38,12 @@ public class FindMaximum<T extends Comparable<T>> {
     // METHOD TO SORT THE ELEMENTS IN AN ARRAY
     public static <T extends Comparable<T>> T testMaximum1(T... inputArray) {
         Arrays.sort(inputArray);
-        Arrays.toString(inputArray);
-        return inputArray[inputArray.length-1];
+        T maxVal = inputArray[inputArray.length-1];
+        printMax(maxVal);   //  INTERNAL METHOD CALLING FROM BELOW GENERIC METHOD
+        return maxVal;
+    }
+    //  GENERIC METHOD TO PRINT MAX VALUE TO STDOUT
+    public static <T> void printMax(T maximumVal) {
+        System.out.println(maximumVal);
     }
 }
