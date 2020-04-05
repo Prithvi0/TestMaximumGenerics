@@ -7,11 +7,10 @@ public class FindMaximumTest {
     //  T.C 1.1: TEST CASE TO ENSURE MAX NUMBER IS IN THE FIRST POSITION
     @Test
     public void givenMaximumIntegerNumber_WhenAtFirstPosition_ShouldReturnSameNumber() {
-//        maximum = new FindMaximum();
         Integer findMaxInteger = (Integer) maximum.testMaximum(33, 3, 4);
         Assert.assertEquals(33, (int) findMaxInteger);
     }
-    // T.C 1.2: TEST CASE TO ENSURE MAX NUMBER IS IN THE SECOND POSITION
+    //  T.C 1.2: TEST CASE TO ENSURE MAX NUMBER IS IN THE SECOND POSITION
     @Test
     public void givenMaximumIntegerNumber_WhenAtSecondPosition_ShouldReturnSameNumber() {
         Integer findMaxInteger = (Integer) maximum.testMaximum(3, 33, 4);
@@ -64,5 +63,26 @@ public class FindMaximumTest {
     public <T> void given3GenericValues_WhenCorrect_ShouldReturnMaximumValue() {
         T genericMaximum = (T) maximum.testMaximum("Apple", "22", "3");
         Assert.assertEquals("Apple", genericMaximum);
+    }
+    //  T.C 4: GENERIC TEST CASES TO ENSURE MAX VALUE
+    @Test
+    public <T> void givenMoreThan3Integers_ShouldReturnMaximumNumber() {
+        T genericMaximumInteger = (T) FindMaximum.testMaximum1(4, 3, 33, 22);
+        Assert.assertEquals(33, genericMaximumInteger);
+    }
+    @Test
+    public <T> void givenMoreThan3FloatNumbers_ShouldReturnMaximumNumber() {
+        T genericMaximumFloatNumber = (T) FindMaximum.testMaximum1(4.1f, 2.1f, 3.1f, 1.1f);
+        Assert.assertEquals(4.1f, genericMaximumFloatNumber);
+    }
+    @Test
+    public <T> void givenMoreThan3Strings_ShouldReturnMaximumString() {
+        T genericMaximumString = (T) FindMaximum.testMaximum1("Apple", "Peach", "Banana", "Pineapple");
+        Assert.assertEquals("Pineapple", genericMaximumString);
+    }
+    @Test
+    public <T> void givenMoreThan3Values_ShouldReturnMaximumString() {
+        T genericMaximumString = (T) FindMaximum.testMaximum1("Apple", "22", "3.3f", "Pineapple");
+        Assert.assertEquals("Pineapple", genericMaximumString);
     }
 }

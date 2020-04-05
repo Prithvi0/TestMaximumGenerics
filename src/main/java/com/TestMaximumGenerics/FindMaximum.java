@@ -1,9 +1,12 @@
 package com.TestMaximumGenerics;
 
+import java.util.Arrays;
+
 //  GENERIC CLASS CREATION
 @SuppressWarnings("unchecked")  //  ANNOTATION TO IGNORE WARNING GENERATED DUE TO UNCHECKED CASTING
 public class FindMaximum<T extends Comparable<T>> {
-    T firstValue, secondValue, thirdValue;
+    public T firstValue, secondValue, thirdValue;
+    public T[] inputArray;
     //  PARAMETER CONSTRUCTOR
     public FindMaximum(T firstValue, T secondValue, T thirdValue) {
         this.firstValue = firstValue;
@@ -24,5 +27,18 @@ public class FindMaximum<T extends Comparable<T>> {
             max = thirdValue;   //  IF CONDITION SATISFIES, RETURNS THIS AS THE LARGEST VALUE
         }
         return max;
+    }
+    // METHOD TO TAKE MORE THAN THREE PARAMETERS
+    public FindMaximum(T[] inputArray) {
+        this.inputArray = inputArray;
+    }
+    public void testMaximum1() {
+        FindMaximum.testMaximum1(this.inputArray);
+    }
+    // METHOD TO SORT THE ELEMENTS IN AN ARRAY
+    public static <T extends Comparable<T>> T testMaximum1(T... inputArray) {
+        Arrays.sort(inputArray);
+        Arrays.toString(inputArray);
+        return inputArray[inputArray.length-1];
     }
 }
